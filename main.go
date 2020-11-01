@@ -31,5 +31,20 @@ func main() {
 		fmt.Printf("Tile Height: %d", tileMap.TileHeight)
 		fmt.Printf("Tile Width: %d", tileMap.TileWidth)
 		return
+	case "layer":
+		for _, layer := range tileMap.Layers {
+			fmt.Printf("Name: %s", layer.Name)
+			fmt.Printf("IsEmpty: %t", layer.IsEmpty())
+			fmt.Printf("Visible: %t", layer.Visible)
+		}
+		return
+	case "tilesets":
+		for _, tile := range tileMap.Tilesets {
+			fmt.Printf("Name: %s", tile.Name)
+			fmt.Printf("Tile Height: %d", tile.TileHeight)
+			fmt.Printf("Tile Width: %d", tile.TileWidth)
+			fmt.Printf("Source: %s", tile.Source)
+		}
+		return
 	}
 }
